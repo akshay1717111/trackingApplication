@@ -37,5 +37,4 @@ openModal() {
 
       this.display = "none";
 }
-
 }
