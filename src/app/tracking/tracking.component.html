@@ -1,5 +1,5 @@
 <div class="m-2">
-<button type="button" class="btn btn-primary" (click)="openModal()">click to open</button>
+<button type="button" class="btn btn-primary" (click)="openModal()">Add Details</button>
 
 
     <div class="modal" tabindex="-1" role="dialog"  [ngStyle]="{'display':display}">
@@ -13,6 +13,43 @@
                          <label>Date:</label>
                          <input type="text" [(ngModel)]="trackingInfo.date">
                          </div>
+                         <div class="modal-body">
+                          <label>CompanyName:</label>
+                          <input type="text" [(ngModel)]="trackingInfo.companyName">
+                          </div>
+                          <div class="modal-body">
+                            <label>VendorName:</label>
+                            <input type="text" [(ngModel)]="trackingInfo.vendorName">
+                            </div>
+                            <div class="modal-body">
+                              <label>EmailID:</label>
+                              <input type="text" [(ngModel)]="trackingInfo.emailID">
+                              </div>
+                              <div class="modal-body">
+                                <label>PhoneNumber:</label>
+                                <input type="text" [(ngModel)]="trackingInfo.phoneNumber">
+                                </div>
+                                <div class="modal-body">
+                                  <label>implementationPartner:</label>
+                                  <input type="text" [(ngModel)]="trackingInfo.implementationPartner">
+                                  </div>
+                                  <div class="modal-body">
+                                    <label>ClientName:</label>
+                                    <input type="text" [(ngModel)]="trackingInfo.clientName">
+                                    </div>
+                                    <div class="modal-body">
+                                      <label>PayRateSubmitted:</label>
+                                      <input type="text" [(ngModel)]="trackingInfo.payRateSubmitted">
+                                      </div>
+                                      <div class="modal-body">
+                                        <label>status:</label>
+                                        <input type="text" [(ngModel)]="trackingInfo.status">
+                                        </div>
+                                        <div class="modal-body">
+                                          <label>leadName:</label>
+                                          <input type="text" [(ngModel)]="trackingInfo.leadName">
+                                          </div>
+                                          
                      <div class="modal-footer">
                         <div class="row">
                             <div class="col-6 col-xs-6 col-lg-6">
@@ -28,12 +65,10 @@
  </div>
   
 
-
 <table class="table table-success table-striped m-3">
     <thead>
       <tr>
         <th scope="col">date</th>
-        <th scope="col">vendor</th>
         <th scope="col">companyName</th>
         <th scope="col">vendorName</th>
         <th scope="col">emailID</th>
@@ -41,18 +76,34 @@
         <th scope="col">implementationPartner</th>
         <th scope="col">clientName</th>
         <th scope="col">payRateSubmitted</th>
-        <th scope="col">type</th>
         <th scope="col">status</th>
         <th scope="col">leadName</th>
+        <th scope="col">Edit</th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-      </tr>
+      {{totalData}}
+      <tr *ngFor="let j of totalData">
+        <td>  <input type="text" [(ngModel)]="j.date" [disabled]="!j.isEditing"> </td>
+        <td> <input type="text" [(ngModel)]="j.companyName" [disabled]="!j.isEditing"> </td>
+        <td> <input type="text" [(ngModel)]="j.vendorName" [disabled]="!j.isEditing"> </td>
+        <td> <input type="text" [(ngModel)]="j.emailID" [disabled]="!j.isEditing"> </td>
+        <td> <input type="text" [(ngModel)]="j.phoneNumber" [disabled]="!j.isEditing"></td> 
+        <td> <input type="text" [(ngModel)]="j.implementationPartner" [disabled]="!j.isEditing"> </td>
+        <td><input type="text" [(ngModel)]="j.clientName" [disabled]="!j.isEditing"></td>
+        <td><input type="text" [(ngModel)]="j.payRateSubmitted" [disabled]="!j.isEditing"></td>
+        <td><input type="text" [(ngModel)]="j.status" [disabled]="!j.isEditing"></td>
+
+        <td><input type="text" [(ngModel)]="j.leadName" [disabled]="!j.isEditing"></td>
+
+
+        
+        
+        <td> <button (click)="editItem(j)" *ngIf="!j.isEditing">Edit</button>   </td>
+        <td>  <button (click)="saveItem(j)" *ngIf="j.isEditing">Save</button>   </td>
+       
+     
+    </tr>
     </tbody>
   </table>
 </div>
