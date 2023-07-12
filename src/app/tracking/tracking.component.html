@@ -84,17 +84,16 @@
     <tbody>
       {{totalData}}
       <tr *ngFor="let j of totalData">
-        <td>  <input type="text" [(ngModel)]="j.date" [disabled]="!j.isEditing"> </td>
-        <td> <input type="text" [(ngModel)]="j.companyName" [disabled]="!j.isEditing"> </td>
-        <td> <input type="text" [(ngModel)]="j.vendorName" [disabled]="!j.isEditing"> </td>
-        <td> <input type="text" [(ngModel)]="j.emailID" [disabled]="!j.isEditing"> </td>
-        <td> <input type="text" [(ngModel)]="j.phoneNumber" [disabled]="!j.isEditing"></td> 
-        <td> <input type="text" [(ngModel)]="j.implementationPartner" [disabled]="!j.isEditing"> </td>
-        <td><input type="text" [(ngModel)]="j.clientName" [disabled]="!j.isEditing"></td>
-        <td><input type="text" [(ngModel)]="j.payRateSubmitted" [disabled]="!j.isEditing"></td>
-        <td><input type="text" [(ngModel)]="j.status" [disabled]="!j.isEditing"></td>
+        <td> {{j.date}} </td>
+        <td> {{j.companyName}} </td>
+        <td> {{j.vendorName}} </td>
+        <td> {{j.emailID}} </td>
+        <td> {{j.phoneNumber}} </td>
+        <td> {{j.implementationPartner}} </td>
+        <td> {{j.payRateSubmitted}} </td>
+        <td> {{j.status}} </td>
+        <td> {{j.leadName}} </td>
 
-        <td><input type="text" [(ngModel)]="j.leadName" [disabled]="!j.isEditing"></td>
 
 
         
