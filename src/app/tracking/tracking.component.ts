@@ -9,9 +9,6 @@ import { Component } from '@angular/core';
 export class TrackingComponent {
  display = "none";
   ngOnInit() {
-    this.totalData.forEach(item => {
-      item.isEditing = false;
-    });
    }
 openModal() {
     this.display = "block";
@@ -39,11 +36,11 @@ openModal() {
       this.display = "none";
 }
 editItem(index: number) {
-  this.totalData[index].isEditing = true;
+ 
 }
 
-saveItem(index: number) {
-  this.totalData[index].isEditing = false;
+deleteItem(index: number) {
+ 
 }
 
 
