@@ -11,6 +11,7 @@ export class TrackingComponent {
   ngOnInit() {
    }
 openModal() {
+  //on modal open
     this.display = "block";
   }
   onCloseHandled() {
