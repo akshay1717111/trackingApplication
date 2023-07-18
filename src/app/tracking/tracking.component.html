@@ -1,7 +1,7 @@
 <div class="m-2">
 <button type="button" class="btn btn-primary" (click)="openModal()">Add Details</button>
 
-
+<!--div for modal-->
     <div class="modal" tabindex="-1" role="dialog"  [ngStyle]="{'display':display}">
          <div class="modal-dialog" role="document">
                <div class="modal-content">
@@ -49,7 +49,8 @@
                                           <label>leadName:</label>
                                           <input type="text" [(ngModel)]="trackingInfo.leadName">
                                           </div>
-                                          
+                                          <!--div for modal footer-->
+
                      <div class="modal-footer">
                         <div class="row">
                             <div class="col-6 col-xs-6 col-lg-6">
