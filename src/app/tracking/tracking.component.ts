@@ -37,11 +37,11 @@ openModal() {
       this.display = "none";
 }
 editItem(index: number) {
- 
+ console.log(index)
 }
 
 deleteItem(index: number) {
- 
+  console.log(index)
 }
 
 
